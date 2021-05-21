@@ -1,12 +1,4 @@
-const request = require('request')
-
-const url = 'http://api.weatherstack.com/current?access_key=28ad3f4c227aee60cd4eed5feaca47da&query=New%20York'
-
-
-request({ url: url, json: true}, (err, res) => {
-    const {temperature, feelslike} = res.body.current
-    console.log(`It is currently ${temperature} degrees out. It feels like ${feelslike}`)
-})
+const request = require('request');
 
 
 const geoCode = (address, callback) => {
@@ -28,12 +20,6 @@ const geoCode = (address, callback) => {
 }
 
 
-geoCode('Abuja', (error, data) => {
-    if(error) {
-        console.log(error)
-    }
-    console.log('Data', data)
-})
 
 
 
